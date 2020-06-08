@@ -4,9 +4,11 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "dev": "next",
-    "build": "next build",
-    "start": "next start"
+    "dev": "next dev",
+    "start": "next start -p 8081",
+    "build": "npm run clean && next build",
+    "clean": "rm -rf .next",
+    "deploy-dev": "npm install && npm run build && eb deploy --profile yatyat NextTypescript-env"
   },
   "author": "",
   "license": "ISC",
